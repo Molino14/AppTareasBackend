@@ -24,7 +24,7 @@ app.use("/api/tareas", rutasTareas);
 app.use((req, res, next) => {
 	res.status(404);
 	res.json({
-		mensaje: "Usuarios o tareas no encontrado",
+		mensaje: "Usuarios o tareas no encontrado/as",
 	});
 });
 
@@ -42,8 +42,8 @@ app.use((error, req, res, next) => {
 
 // Conexión a la base de datos (MongoDB Atlas) y arrancar el servidor (Express)
 mongoose
-	.connect(process.env.MONGO_DB_URL)
+	.connect(process.env.MONGO_DB_URL) // Uso de variable de entorno
 	.then(() => {
-		app.listen(process.env.PORT, () => console.log("Escuchando en puerto " + process.env.PORT));
+		app.listen(process.env.PORT, () => console.log("Escuchando en puerto " + process.env.PORT)); // Uso de variable de entorno
 	})
 	.catch((error) => console.log(error));

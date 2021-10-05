@@ -1,0 +1,31 @@
+### Solicitar tareas
+GET http://localhost:5000/api/tareas/
+
+### Solicitar tarea por ID
+GET http://localhost:5000/api/tareas/612d2bd8b523080b6f849438
+
+### Solicitar tareas por ID de usuario
+GET http://localhost:5000/api/tareas/usuarios/612d1fa4eff4fb054bd12be3
+
+### Crear una tarea
+POST http://localhost:5000/api/tareas/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTQ0ZDc3NjIwOGFkZGQ1M2FkOTRiZjQiLCJlbWFpbCI6InVzZXI1NUBnbWFpbC5jb20iLCJpYXQiOjE2MzE5MDQ0MTYsImV4cCI6MTYzMTkwODAxNn0.59F7d00kQ1UsNDWS8_Q47tUDA-I03W7Vi8_LoquEU04
+
+{
+    "id_usuario": "6144d776208addd53ad94bf4",
+    "descripcion": "Esto es una nueva tarea"
+}
+
+### Eliminar tarea por ID
+DELETE http://localhost:5000/api/tareas/6144eb58c49d092cb9bf4894
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTQ0ZDc3NjIwOGFkZGQ1M2FkOTRiZjQiLCJlbWFpbCI6InVzZXI1NUBnbWFpbC5jb20iLCJpYXQiOjE2MzE5MDQ0MTYsImV4cCI6MTYzMTkwODAxNn0.59F7d00kQ1UsNDWS8_Q47tUDA-I03W7Vi8_LoquEU04
+
+### Modificar tarea
+PATCH http://localhost:5000/api/tareas/6144eb58c49d092cb9bf4894 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTQ0ZDc3NjIwOGFkZGQ1M2FkOTRiZjQiLCJlbWFpbCI6InVzZXI1NUBnbWFpbC5jb20iLCJpYXQiOjE2MzE5MDQ0MTYsImV4cCI6MTYzMTkwODAxNn0.59F7d00kQ1UsNDWS8_Q47tUDA-I03W7Vi8_LoquEU04
+
+{
+    "completado": true
+}

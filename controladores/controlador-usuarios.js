@@ -212,7 +212,7 @@ async function modificarUsuario(req, res, next) {
 		error.code = 422;
 		return next(error);
 	}
-	const { nombre, apellidos, email, password } = req.body; // Sacamos del body del request las propiedades que queremos modificar
+	const { nombre, apellidos, email, password} = req.body; // Sacamos del body del request las propiedades que queremos modificar
 	const idUsuario = req.params.uid;
 	let usuario;
 	try {
@@ -284,7 +284,10 @@ async function loginUsuario(req, res, next) {
 			// Creación del token para firmar.
 			let token;
 			try {
-				token = jwt.sign({ idUsuario: existeUsuario.id, email: existeUsuario.email }, process.env.JWT_KEY, { expiresIn: "1h" });
+				token = jwt.sign({ 
+					idUsuario: existeUsuario.id,
+					email: existeUsuario.email 
+				}, process.env.JWT_KEY, { expiresIn: "1h" }); // Uso de variable de entorno
 			} catch (error) {
 				const err = new Error("El proceso de login ha fallado");
 				err.code = 500; // Internal Server Error

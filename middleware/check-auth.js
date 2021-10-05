@@ -7,13 +7,14 @@ function autentificacion(req, res, next) {
 			console.log("No hay token");
 			throw new Error("Fallo de autentificación");
 		} else {
-			decodedToken = jwt.verify(token, process.env.JWT_KEY);
+			decodedToken = jwt.verify(token, process.env.JWT_KEY); // Uso de variable de entorno
 			req.userData = {
 				userId: decodedToken.idUsuario
 			};
 			next();
 		}
 	} catch (error) {
+		console.log(error)
 		console.log("La extracción del token de seguridad falló");
 		const err = new Error("Fallo de autentificación");
 		err.code = 401;

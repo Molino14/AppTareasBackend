@@ -1,0 +1,53 @@
+### Solicitar usuarios
+GET http://localhost:5000/api/usuarios/
+
+### Solicitar usuarios (con url en la nube)
+GET https://pizzeria-cife.herokuapp.com/api/usuarios/
+
+### Solicitar usuario por ID
+GET http://localhost:5000/api/usuarios/612d1fa4eff4fb054bd12be3
+
+### Solicitar usuarios por nombre
+GET http://localhost:5000/api/usuarios/nombre/Samuel
+
+### Solicitar usuario por email
+GET http://localhost:5000/api/usuarios/email/samuel.511.5@gmail.com
+
+### Crear un usuario
+POST http://localhost:5000/api/usuarios/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Samuel",
+    "apellidos": "Ramírez Ojeda",
+    "email": "samuel@gmail.com",
+    "password": "123456"
+}
+
+### Eliminar usuario por ID
+DELETE http://localhost:5000/api/usuarios/6140e5bd2e978ff0617a3411
+
+### Eliminar usuario por e-mail
+DELETE http://localhost:5000/api/usuarios/delemail/samuel@gmail.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTVjNjg2ZjYyZjk0YzIxMGU1MTg4OTIiLCJlbWFpbCI6InNhbXVlbEBnbWFpbC5jb20iLCJpYXQiOjE2MzM0Nzc0MzQsImV4cCI6MTYzMzQ4MTAzNH0.EU1DiMwx8cEHfvRN70AKiq_sQgG9atDdwwmdmUJe8no
+
+### Modificar usuario
+PATCH https://localhost:5000/api/usuarios/615ce3843981595a26d43bae HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTVjZTM4NDM5ODE1OTVhMjZkNDNiYWUiLCJlbWFpbCI6InNhbXVlbEBnbWFpbC5jb20iLCJpYXQiOjE2MzM0Nzc1NjMsImV4cCI6MTYzMzQ4MTE2M30.LWw_EGqU1ZtQz13-agWDA0j1_0HwAsyYn1YuluvefF8
+
+{
+    "nombre": "SamuelModificado",
+    "apellidos": "Ramírez Ojeda Modificado",
+    "email": "samuelmodificado@gmail.com",
+    "password": "123456"
+}
+
+### Login del usuario
+POST http://localhost:5000/api/usuarios/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "samuel@gmail.com",
+    "password": "123456"
+}
