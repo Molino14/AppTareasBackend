@@ -2,7 +2,7 @@
 GET http://localhost:5000/api/tareas/
 
 ### Solicitar tarea por ID
-GET http://localhost:5000/api/tareas/612d2bd8b523080b6f849438
+GET http://localhost:5000/api/tareas/615f141ef2c869a666abfe9e
 
 ### Solicitar tareas por ID de usuario
 GET http://localhost:5000/api/tareas/usuarios/612d1fa4eff4fb054bd12be3
@@ -10,22 +10,23 @@ GET http://localhost:5000/api/tareas/usuarios/612d1fa4eff4fb054bd12be3
 ### Crear una tarea
 POST http://localhost:5000/api/tareas/ HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTQ0ZDc3NjIwOGFkZGQ1M2FkOTRiZjQiLCJlbWFpbCI6InVzZXI1NUBnbWFpbC5jb20iLCJpYXQiOjE2MzE5MDQ0MTYsImV4cCI6MTYzMTkwODAxNn0.59F7d00kQ1UsNDWS8_Q47tUDA-I03W7Vi8_LoquEU04
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTVjZTM4NDM5ODE1OTVhMjZkNDNiYWUiLCJlbWFpbCI6InNhbXVlbEBnbWFpbC5jb20iLCJpYXQiOjE2MzQ1NTAwMzYsImV4cCI6MTYzNDU1MzYzNn0.Hu9u4g5ZNXCBijYSWvt2e2K_pAIGX3HgwAnBr3vzshE
 
 {
-    "id_usuario": "6144d776208addd53ad94bf4",
-    "descripcion": "Esto es una nueva tarea"
+    "id_usuario": "615ce3843981595a26d43bae",
+    "descripcion": "Esto es una nueva tarea con nueva fecha"
 }
 
 ### Eliminar tarea por ID
-DELETE http://localhost:5000/api/tareas/6144eb58c49d092cb9bf4894
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTQ0ZDc3NjIwOGFkZGQ1M2FkOTRiZjQiLCJlbWFpbCI6InVzZXI1NUBnbWFpbC5jb20iLCJpYXQiOjE2MzE5MDQ0MTYsImV4cCI6MTYzMTkwODAxNn0.59F7d00kQ1UsNDWS8_Q47tUDA-I03W7Vi8_LoquEU04
+DELETE http://localhost:5000/api/tareas/616d412299a700e6fc531664
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTVjZTM4NDM5ODE1OTVhMjZkNDNiYWUiLCJlbWFpbCI6InNhbXVlbEBnbWFpbC5jb20iLCJpYXQiOjE2MzQ1NTAwMzYsImV4cCI6MTYzNDU1MzYzNn0.Hu9u4g5ZNXCBijYSWvt2e2K_pAIGX3HgwAnBr3vzshE
 
 ### Modificar tarea
-PATCH http://localhost:5000/api/tareas/6144eb58c49d092cb9bf4894 HTTP/1.1
+PATCH http://localhost:5000/api/tareas/615f141ef2c869a666abfe9e HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTQ0ZDc3NjIwOGFkZGQ1M2FkOTRiZjQiLCJlbWFpbCI6InVzZXI1NUBnbWFpbC5jb20iLCJpYXQiOjE2MzE5MDQ0MTYsImV4cCI6MTYzMTkwODAxNn0.59F7d00kQ1UsNDWS8_Q47tUDA-I03W7Vi8_LoquEU04
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTVjZTM4NDM5ODE1OTVhMjZkNDNiYWUiLCJlbWFpbCI6InNhbXVlbEBnbWFpbC5jb20iLCJpYXQiOjE2MzM2MjA5MTcsImV4cCI6MTYzMzYyNDUxN30.lQOqRLX7t-RQaqEt-psWx55xihndXhT1dHyTphuF_5I
 
 {
-    "completado": true
+    "descripcion": "Nueva tarea modificada2",
+    "completada": true
 }

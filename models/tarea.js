@@ -9,8 +9,7 @@ const tareaSchema = new Schema({
         required: true
     },
     fecha_hora: {
-        type: Date, default: Date.now,
-        required: true
+        type: Date, default: Date.now
     },
     completada: {
         type: Boolean,

@@ -1,5 +1,7 @@
 const {validationResult} = require('express-validator');
 const mongoose = require('mongoose');
+const moment = require('moment');
+moment.locale('es');
 
 const Tarea = require('../models/tarea');
 const Usuario = require('../models/usuario');
@@ -9,6 +11,7 @@ async function recuperarTareas(req, res, next) {
     let tareas;
     try {
         tareas = await Tarea.find().populate('id_usuario');
+        moment(tareas.fecha_hora).format('LLLL');
     } catch (error) {
         const err = new Error('No se han podido recuperar los datos')
         err.code = 500; // Internal Server Error
@@ -75,9 +78,11 @@ async function crearTarea(req, res, next) {
         return next(error);
     }
     const {
+        id_usuario,
         descripcion
     } = req.body;
     const nuevaTarea = new Tarea({
+        id_usuario,
         descripcion
     })
     let usuario; // Localizamos al usuario que se corresponde con el id_usuario que hemos recibido en el request

@@ -26,6 +26,7 @@ Content-Type: application/json
 
 ### Eliminar usuario por ID
 DELETE http://localhost:5000/api/usuarios/6140e5bd2e978ff0617a3411
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTVjNjg2ZjYyZjk0YzIxMGU1MTg4OTIiLCJlbWFpbCI6InNhbXVlbEBnbWFpbC5jb20iLCJpYXQiOjE2MzM0Nzc0MzQsImV4cCI6MTYzMzQ4MTAzNH0.EU1DiMwx8cEHfvRN70AKiq_sQgG9atDdwwmdmUJe8no
 
 ### Eliminar usuario por e-mail
 DELETE http://localhost:5000/api/usuarios/delemail/samuel@gmail.com
@@ -34,13 +35,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2M
 ### Modificar usuario
 PATCH https://localhost:5000/api/usuarios/615ce3843981595a26d43bae HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTVjZTM4NDM5ODE1OTVhMjZkNDNiYWUiLCJlbWFpbCI6InNhbXVlbEBnbWFpbC5jb20iLCJpYXQiOjE2MzM0Nzc1NjMsImV4cCI6MTYzMzQ4MTE2M30.LWw_EGqU1ZtQz13-agWDA0j1_0HwAsyYn1YuluvefF8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOiI2MTVjZTM4NDM5ODE1OTVhMjZkNDNiYWUiLCJlbWFpbCI6InNhbXVlbEBnbWFpbC5jb20iLCJpYXQiOjE2MzQ1NTExNjQsImV4cCI6MTYzNDU1NDc2NH0.6fkAAUgtVXiY4HZwaqj6MCVWHTocmcWGDfHTRSByk0k
 
 {
     "nombre": "SamuelModificado",
     "apellidos": "Ramírez Ojeda Modificado",
-    "email": "samuelmodificado@gmail.com",
-    "password": "123456"
+    "email": "samuelmodificado@gmail.com"
 }
 
 ### Login del usuario

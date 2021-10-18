@@ -158,7 +158,7 @@ async function crearUsuario(req, res, next) {
 		error.code = 401; // 401 Fallo de autentificación.
 		return next(error);
 	} else {
-		// Hashing password *Falta Transaccion, Sesion
+		// Hashing password
 		let hashedPassword;
 		try {
 			hashedPassword = await bcrypt.hash(password, 10);
@@ -212,14 +212,21 @@ async function modificarUsuario(req, res, next) {
 		error.code = 422;
 		return next(error);
 	}
-	const { nombre, apellidos, email, password} = req.body; // Sacamos del body del request las propiedades que queremos modificar
+	const { nombre, apellidos, email, password } = req.body; // Sacamos del body del request las propiedades que queremos modificar
 	const idUsuario = req.params.uid;
 	let usuario;
 	try {
 		usuario = await Usuario.findById(idUsuario);
-		// existeEmail = await Usuario.findOne({ email });
+		existeEmail = await Usuario.findOne({ email });
 	} catch (error) {
 		const err = new Error("No se han podido recuperar los datos");
+		err.code = 500; // Internal Server Error
+		return next(err);
+	}
+	if (!existeEmail) {
+		console.log("No existe emails");
+	} else if (existeEmail.email && existeEmail.email !== usuario.email) {
+		const err = new Error("Este email ya esta en uso");
 		err.code = 500; // Internal Server Error
 		return next(err);
 	}
