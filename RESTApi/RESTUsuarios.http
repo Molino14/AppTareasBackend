@@ -2,7 +2,7 @@
 GET http://localhost:5000/api/usuarios/
 
 ### Solicitar usuarios (con url en la nube)
-GET https://pizzeria-cife.herokuapp.com/api/usuarios/
+GET https://apptareasodisea.herokuapp.com/api/usuarios/
 
 ### Solicitar usuario por ID
 GET http://localhost:5000/api/usuarios/612d1fa4eff4fb054bd12be3
